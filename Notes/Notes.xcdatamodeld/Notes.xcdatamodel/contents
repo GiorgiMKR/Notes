@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Notes" representedClassName=".Notes" syncable="YES" codeGenerationType="class">
+        <attribute name="title" attributeType="String"/>
+        <relationship name="note" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Paragraph" inverseName="parentNote" inverseEntity="Paragraph"/>
+    </entity>
+    <entity name="Paragraph" representedClassName="Paragraph" syncable="YES" codeGenerationType="class">
+        <attribute name="text" attributeType="String"/>
+        <relationship name="parentNote" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notes" inverseName="note" inverseEntity="Notes"/>
+    </entity>
+    <elements>
+        <element name="Notes" positionX="-6187.1796875" positionY="-1831.346130371094" width="127.8340454101562" height="73"/>
+        <element name="Paragraph" positionX="-6001.533142089844" positionY="-1784.699066162109" width="128" height="73"/>
+    </elements>
 </model>
